@@ -1,0 +1,16 @@
+System.register("modules/home/home", [], function() {
+  "use strict";
+  var __moduleName = "modules/home/home";
+  function require(path) {
+    return $traceurRuntime.require("modules/home/home", path);
+  }
+  var HomeController = System.get("modules/home/home-controller").default;
+  var HomeService = System.get("modules/home/home-service").default;
+  var homeModule = angular.module("Home", []);
+  homeModule.controller("HomeCtrl", HomeController);
+  homeModule.service("HomeService", HomeService);
+  var $__default = homeModule;
+  return {get default() {
+      return $__default;
+    }};
+});

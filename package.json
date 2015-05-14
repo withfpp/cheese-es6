@@ -1,0 +1,33 @@
+{
+  "name": "cheese",
+  "version": "1.0.0",
+  "description": "say cheese",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "gulp-traceur": "^0.14.0",
+    "gulp-concat": "^2.4.1",
+    "traceur": "0.0.72",
+    "karma": "^0.12.24",
+    "karma-traceur-preprocessor": "^0.4.0",
+    "karma-jasmine": "^0.2.3",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "protractor": "^1.1.1",
+    "shelljs": "^0.2.6",
+    "karma-junit-reporter": "^0.2.2",
+    "browser-sync": "^2.5.3",
+    "gulp": "^3.8.11",
+    "gulp-jshint": "^1.9.4",
+    "jshint-stylish": "^1.0.1"
+  },
+  "devDependencies": {
+    "gulp-clean": "^0.3.1",
+    "gulp-ngmin": "^0.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.1"
+  }
+}
