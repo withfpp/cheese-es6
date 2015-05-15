@@ -8,6 +8,7 @@ var rename = require('gulp-rename');
 var ngmin = require('gulp-ngmin');
 var clean = require('gulp-clean');
 var sass = require('gulp-sass');
+var bower = require('gulp-bower');
 
 //todo : move out these monsters to config json file
 var SOURCE_FILES = ['!app/**/*_test.js', 'app/*.js', 'app/modules/**/*.js'];
@@ -60,16 +61,9 @@ gulp.task('html', function () {
         .pipe(gulp.dest(BUILD.html));
 });
 
-gulp.task('vendor:js', function () {
-    return gulp.src(SOURCE_VENDORS)
-        .pipe(concat('vendor.js'))
-        .pipe(gulp.dest(BUILD.js));
-});
-
-gulp.task('vendor:css', function () {
-    return gulp.src(CSS_VENDORS)
-        .pipe(concat('vendors.css'))
-        .pipe(gulp.dest(BUILD.css));
+gulp.task('bower', function() {
+  return bower('./app/components')
+    .pipe(gulp.dest('build/components'))
 });
 
 gulp.task('browserSync', function() {
@@ -98,13 +92,13 @@ gulp.task('traceur', function () {
             modules: 'register',
             moduleName : true
         }))
-        .pipe(rename('app.css'))
+        .pipe(concat('app.js'))
         .pipe(gulp.dest('app/dist'))
         .pipe(gulp.dest(BUILD.js))
         .pipe(reload({stream:true}));
 });
 
-gulp.task('default', ['clean', 'vendor:js','vendor:css','html', 'sass', 'traceur', 'watch', 'browserSync']);
+gulp.task('default', ['clean', 'bower','html', 'sass', 'traceur', 'watch', 'browserSync']);
 
 
 /**

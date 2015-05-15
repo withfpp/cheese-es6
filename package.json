@@ -25,6 +25,7 @@
     "jshint-stylish": "^1.0.1"
   },
   "devDependencies": {
+    "gulp-bower": "0.0.10",
     "gulp-clean": "^0.3.1",
     "gulp-ngmin": "^0.3.0",
     "gulp-rename": "^1.2.2",
